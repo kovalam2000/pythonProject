@@ -1,0 +1,2 @@
+import timeseries from astropy
+
