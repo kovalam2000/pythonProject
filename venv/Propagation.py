@@ -1,8 +1,8 @@
 import pandas as pd
 from sgp4.api import Satrec
-from tletools import TLE
 import math
 import numpy as np
+from astropy.time import Time
 
 # Global Variables
 k = 2 * math.pi;  # Factor from [rev/s] to [rad/s]
@@ -25,3 +25,9 @@ n = satellite.no_kozai / 60  # mean motion in radians/second
 a = satellite.a * body_radius  # semi major axis
 e = satellite.ecco  # eccentricty
 
+
+
+jd, fr = 2458827, 0.362605
+e, r, v = satellite.sgp4(jd, fr)
+
+print(r)
